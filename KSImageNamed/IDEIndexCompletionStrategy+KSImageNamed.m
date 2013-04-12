@@ -75,8 +75,9 @@
                 }
                 
                 NSRange imageNamedRange = [itemString rangeOfString:@" imageNamed:"];
+                NSRange imageNamedRange2 = [itemString rangeOfString:@" imageOrientedThemedWithBaseName:"];
                 
-                if (imageNamedRange.location != NSNotFound) {
+                if (imageNamedRange.location != NSNotFound || imageNamedRange2.location != NSNotFound) {
                     atImageNamed = YES;
                     
                     //We might be past imageNamed, such as 'imageNamed:@"name"] draw<insertion point>'
@@ -99,7 +100,7 @@
                 
                 NSString *previousItemString = [string substringWithRange:previousItemRange];
                 
-                if ([previousItemString isEqualToString:@"imageNamed"]) {
+                if ([previousItemString isEqualToString:@"imageNamed"] || [previousItemString isEqualToString:@"imageOrientedThemedWithBaseName"]) {
                     atImageNamed = YES;
                 }
             }

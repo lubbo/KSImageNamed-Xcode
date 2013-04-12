@@ -31,12 +31,13 @@
         @try {
             NSRange range = [[self textView] realSelectedRange];
             NSString * const stringToMatch = @"mage imageNamed:";
+            NSString * const stringToMatch2 = @"mage imageOrientedThemedWithBaseName:";
             
             //If an autocomplete causes imageNamed: to get inserted, remove the token and immediately pop up autocomplete
             if (range.location > [stringToMatch length]) {
                 NSString *insertedString = [[[self textView] string] substringWithRange:NSMakeRange(range.location - [stringToMatch length], [stringToMatch length])];
                 
-                if ([insertedString isEqualToString:stringToMatch]) {
+                if ([insertedString isEqualToString:stringToMatch] || [insertedString isEqualToString:stringToMatch2]) {
                     [[self textView] _replaceCellWithCellText:@""];
                     [self _showCompletionsAtCursorLocationExplicitly:YES];
                 }

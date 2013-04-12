@@ -39,8 +39,7 @@
                     line = [string substringWithRange:lineRange];
                 }
             }
-            
-            shouldAutoComplete = [line hasSuffix:@"mage imageNamed:"];
+            shouldAutoComplete = [line hasSuffix:@"mage imageNamed:"] || [line hasSuffix:@"mage imageOrientedThemedWithBaseName:"];
         } @catch (NSException *exception) {
             //I'd rather not crash if Xcode chokes on something
         }
