@@ -1,6 +1,10 @@
 # KSImageNamed-Xcode
 ---
 
+## Changes in this Fork
+
+Autocompletion support for '[UIImage imageOrientedThemedWithBaseName:]' selector
+
 ## What is this?
 
 Can't remember whether that image you just added to the project was called `button-separator-left` or `button-left-separator`? Now you don't have to, because this will autocomplete your `imageNamed:` calls like you'd expect. Just type in `[NSImage imageNamed:` or `[UIImage imageNamed:` and all the images in your project will conveniently appear in the autocomplete menu.
